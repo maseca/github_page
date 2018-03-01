@@ -1,13 +1,15 @@
 <template>
     <div>
         <h1>&alpha; !!! W&epsilon;LC&Omega;M&epsilon; &tau;&Omega; Y&Omega;UR D&Omega;&Omega;M !!! &Omega;</h1>
-        <form @submit.prevent="handleSubmit">
+        <form @submit.prevent>
             <label>
                 Enter thy Name...
-                <input type="text" v-model="name"/>
+                <br/>
+                <input type="text" v-model="username"/>
             </label>
         </form>
-        <router-link to="">Start This Wild Ride.</router-link>
+        <br/>
+        <router-link :to="'/home/'+username">Start This Wild Ride.</router-link>
     </div>
 </template>
 
@@ -16,7 +18,7 @@ export default {
   name: 'Welcome',
   data () {
     return {
-      name: "Mr. Big Boy"
+      username: "Mr. Big Boy"
     }
   }
 }
