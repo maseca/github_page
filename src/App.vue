@@ -1,7 +1,15 @@
 <template>
+<div>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <div id="app">
-    <router-view/>
+    <div class="bg-img">
+        <router-view/>
+    </div>
   </div>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+</div>
 </template>
 
 <script>
@@ -19,7 +27,13 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+.bg-img{
+  background-size:  cover;
+  background: #000 url('./assets/bladerunner-full.png') no-repeat fixed center center;
+}
+
 body{
-    background: #000;
+    background-image: url('./assets/bladerunner-full.png');
 }
 </style>
