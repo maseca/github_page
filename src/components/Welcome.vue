@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>&alpha; !!! W&epsilon;LC&Omega;M&epsilon; &tau;&Omega; Y&Omega;UR D&Omega;&Omega;M !!! &Omega;</h1>
+        <div class="font-hack">&alpha; !!! W&epsilon;LC&Omega;M&epsilon; &tau;&Omega; Y&Omega;UR D&Omega;&Omega;M !!! &Omega;</div
         <form @submit.prevent>
             <label>
                 Enter thy Name...
@@ -8,6 +8,7 @@
                 <input class="input" type="text" :value="username" @input="updateUserName"/>
             </label>
         </form>
+        <br>
         <router-link to="home">Start This Wild Ride.</router-link>
     </div>
 </template>
@@ -32,10 +33,6 @@
 </script>
 
 <style scoped>
-    h1, h2 {
-        font-weight: normal;
-    }
-
     ul {
         list-style-type: none;
         padding: 0;
@@ -51,9 +48,13 @@
     }
 
     input {
-        width: 25vw;
+        width: 200px;
         background: #000;
         color: orangered;
         border-color: #2c3e50;
+    }
+
+    .font-hack {
+        font-size: 2em;
     }
 </style>
