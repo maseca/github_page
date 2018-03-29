@@ -2,7 +2,7 @@
     <div :class="'modal'+active">
         <div class="modal-background"></div>
         <div class="modal-content">
-            <div class="box">
+            <div class="box bg-hack">
                 <slot></slot>
             </div>
         </div>
@@ -20,3 +20,9 @@
         }
     }
 </script>
+
+<style scoped>
+    .bg-hack {
+        background: black;
+    }
+</style>

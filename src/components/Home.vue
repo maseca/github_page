@@ -12,20 +12,25 @@
                 Replicant This was not called execution. It was called retirement.
             </p>
         </Modal>
-        <div class="box">
-            <p>
-                Hello <span>{{username}}</span>!
-            </p>
-        </div>
+        <p>
+            Hello <span>{{username}}</span>!
+        </p>
     </div>
 </template>
 
 <script>
+    import { mapGetters } from 'vuex'
     import Modal from './Modal'
     export default {
         name: 'Home',
-        props: ['username'],
-        components: { Modal }
+
+        components: { Modal },
+
+        computed: {
+            ...mapGetters([
+                'username'
+            ])
+        }
     }
 </script>
 

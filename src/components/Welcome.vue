@@ -5,43 +5,55 @@
             <label>
                 Enter thy Name...
                 <br/>
-                <input type="text" v-model="username"/>
+                <input class="input" type="text" :value="username" @input="updateUserName"/>
             </label>
         </form>
-        <br/>
-        <router-link :to="'/home/'+username">Start This Wild Ride.</router-link>
+        <router-link to="home">Start This Wild Ride.</router-link>
     </div>
 </template>
 
 <script>
-export default {
-  name: 'Welcome',
-  data () {
-    return {
-      username: "Mr. Big Boy"
+    import { mapState } from 'vuex'
+    export default {
+        name: 'Welcome',
+
+        computed: {
+            ...mapState({
+                username: state => state.username
+            })
+        },
+
+        methods: {
+            updateUserName (e) {
+                this.$store.dispatch('changeName', e.target.value)
+            }
+        }
     }
-  }
-}
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+    h1, h2 {
+        font-weight: normal;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    li {
+        display: inline-block;
+        margin: 0 10px;
+    }
+
+    a {
+        color: #42b983;
+    }
+
     input {
+        width: 25vw;
         background: #000;
         color: orangered;
+        border-color: #2c3e50;
     }
 </style>
