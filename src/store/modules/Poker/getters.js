@@ -1,3 +1,4 @@
 export default {
-    username: state => state.username,
+    card: state => state.card,
+    deck: state => state.deck,
 }

@@ -14,6 +14,7 @@
         </Modal>
         <p>
             Hello <span>{{username}}</span>!
+            <router-link to="poker">Play Poker</router-link>
         </p>
     </div>
 </template>

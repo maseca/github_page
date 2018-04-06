@@ -1,5 +1,5 @@
 export default {
-    CHANGE_NAME (state, username) {
-        state.username = username;
+    PICK_CARD (state, index) {
+        state.card = state.deck[index];
     }
 }

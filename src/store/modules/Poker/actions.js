@@ -1,5 +1,5 @@
 export default {
-    changeName (context, username) {
-        context.commit('CHANGE_NAME', username);
+    pickCard (context, index) {
+        context.commit('PICK_CARD', index);
     }
 }
