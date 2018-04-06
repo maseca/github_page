@@ -3,25 +3,13 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex);
 
+import base from './modules/base'
+import Poker from './modules/Poker'
+
 export default new Vuex.Store({
-    state: {
-        username: "Rick Deckard",
-    },
-
-    getters: {
-        username: state => state.username,
-    },
-
-    actions: {
-        changeName (context, username) {
-            context.commit('CHANGE_NAME', username);
-        }
-    },
-
-    mutations: {
-        CHANGE_NAME (state, username) {
-            state.username = username;
-        }
+    modules: {
+        base,
+        Poker
     }
 });
 
