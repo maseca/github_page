@@ -1,6 +1,10 @@
 <template>
-    <div>
-        <card :info="this.card"></card>
+    <div class="columns is-mobile">
+        <card :info="this.deck[13]"></card>
+        <card :info="this.deck[0]"></card>
+        <card :info="this.deck[26]"></card>
+        <card :info="this.deck[39]"></card>
+        <card :info="this.deck[17]"></card>
     </div>
 </template>
 
