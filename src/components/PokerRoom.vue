@@ -1,10 +1,13 @@
 <template>
-    <div class="columns is-mobile">
-        <card :info="this.deck[13]"></card>
-        <card :info="this.deck[0]"></card>
-        <card :info="this.deck[26]"></card>
-        <card :info="this.deck[39]"></card>
-        <card :info="this.deck[17]"></card>
+    <div>
+        <div class="columns is-mobile">
+            <card :index="0"></card>
+            <card :index="1"></card>
+            <card :index="2"></card>
+            <card :index="3"></card>
+            <card :index="4"></card>
+        </div>
+        <button @click="dealCards">DEAL</button>
     </div>
 </template>
 
@@ -21,8 +24,14 @@
         computed: {
             ...mapGetters([
                 'deck',
-                'card'
+                'hand'
             ])
-        }
+        },
+
+        methods: {
+            dealCards: function () {
+                this.$store.dispatch('dealHand');
+            }
+        },
     }
 </script>

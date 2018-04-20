@@ -1,4 +1,4 @@
 export default {
-    card: state => state.card,
+    hand: state => state.hand,
     deck: state => state.deck,
 }

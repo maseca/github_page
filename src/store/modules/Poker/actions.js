@@ -1,5 +1,9 @@
 export default {
-    pickCard (context, index) {
-        context.commit('PICK_CARD', index);
+    dealHand (context) {
+        context.commit('DEAL_HAND');
+    },
+
+    toggleHeld (context, index) {
+        context.commit('TOGGLE_HELD', index);
     }
 }

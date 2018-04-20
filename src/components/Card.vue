@@ -1,24 +1,24 @@
 <template>
     <div class="column ">
         <div class="box" :style="'font-size:7vw;height:25vw;'+color" @click="toggleHeld">
-            <div style="font-size: 5vw">{{this.held ? "HELD" : ""}}</div>
-            {{this.info.charAt(0)}}{{suit}}
+            <div style="font-size: 5vw">{{this.hand[this.index].held ? "HELD" : ""}}</div>
+            {{this.hand[this.index].value}}{{suit}}
         </div>
     </div>
 </template>
 
 <script>
+    import { mapGetters } from 'vuex'
     export default {
         name: 'Card',
-        data: function () {
-            return {
-                held: false,
-            }
-        },
-        props: ['info'],
+        props: ['index'],
         computed: {
+            ...mapGetters([
+                'hand'
+            ]),
+
             suit () {
-                switch(this.info.charAt(1)){
+                switch(this.hand[this.index].suit){
                     case 'C':
                         return "\u2663";
                     case 'D':
@@ -31,7 +31,7 @@
             },
 
             color () {
-                switch(this.info.charAt(1)){
+                switch(this.hand[this.index].suit){
                     case 'C':
                     case 'S':
                         return "color:black";
@@ -44,7 +44,7 @@
 
         methods: {
             toggleHeld () {
-                this.held = !this.held;
+                this.$store.dispatch('toggleHeld', this.index);
             }
         }
     }
