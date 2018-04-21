@@ -1,7 +1,7 @@
 <template>
     <div class="column ">
         <div class="box" :style="'font-size:7vw;height:25vw;'+color" @click="toggleHeld">
-            <div style="font-size: 5vw">{{this.hand[this.index].held ? "HELD" : ""}}</div>
+            <div style="font-size:5vw">{{this.hand[this.index].held ? "HELD" : ""}}</div>
             {{this.hand[this.index].value}}{{suit}}
         </div>
     </div>
